@@ -187,6 +187,7 @@ Func btnStart()
 		If Not $bSearchMode Then
 			CreateLogFile()
 			CreateAttackLogFile()
+			CreateStatsLogFile()
 			If $FirstRun = -1 Then $FirstRun = 1
 		EndIf
 		_GUICtrlEdit_SetText($txtLog, _PadStringCenter(" BOT LOG ", 71, "="))

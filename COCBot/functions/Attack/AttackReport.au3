@@ -176,10 +176,11 @@ Func AttackReport()
 		EndIf
 	EndIf
 
-	
+
 	CoCStats($starsearned) ; noyax
-	
-	
+	SetStatsLog() ; Batrako
+
+
 	If $FirstAttack = 0 Then $FirstAttack = 1
 	$iGoldTotal += $iGoldLast + $iGoldLastBonus
 	$iTotalGoldGain[$iMatchMode] += $iGoldLast + $iGoldLastBonus

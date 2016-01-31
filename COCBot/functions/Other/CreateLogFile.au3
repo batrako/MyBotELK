@@ -44,4 +44,29 @@ Func CreateAttackLogFile()
     $sAttackLogFName = "AttackLog" & "-"& @YEAR & "-" & @MON & ".log"
 	$sAttackLogPath = $dirLogs & $sAttackLogFName
 	$hAttackLogFileHandle = FileOpen($sAttackLogPath, $FO_APPEND)
-EndFunc   ;==>CreateAttackLogFile
+ EndFunc   ;==>CreateAttackLogFile
+
+
+; #FUNCTION# ====================================================================================================================
+; Name ..........: CreateStatsLogFile
+; Description ...:
+; Syntax ........: CreateStatsLogFile()
+; Parameters ....:
+; Return values .: None
+; Author ........:
+; Modified ......:
+; Remarks .......: This file is part of MyBot, previously known as ClashGameBot. Copyright 2015-2016
+;                  MyBot is distributed under the terms of the GNU GPL
+; Related .......:
+; Link ..........: https://github.com/MyBotRun/MyBot/wiki
+; Example .......: No
+; ===============================================================================================================================
+Func CreateStatsLogFile()
+    If $hStatsLogFileHandle <>"" Then
+		FileClose($hStatsLogFileHandle)
+		$hStatsLogFileHandle=""
+	EndIf
+    $sStatsLogFName = "StatsLog" & "-"& @YEAR & "-" & @MON & ".log"
+	$sStatsLogPath = $dirLogs & $sStatsLogFName
+	$hStatsLogFileHandle = FileOpen($sStatsLogPath, $FO_APPEND)
+EndFunc   ;==>CreateStatsLogFile

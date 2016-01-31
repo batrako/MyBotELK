@@ -213,8 +213,10 @@ Global $eIcnDonBlank = $eIcnDonBlacklist
 Global $aDonIcons[17] = [$eIcnDonBarbarian, $eIcnDonArcher, $eIcnDonGiant, $eIcnDonGoblin, $eIcnDonWallBreaker, $eIcnDonBalloon, $eIcnDonWizard, $eIcnDonHealer, $eIcnDonDragon, $eIcnDonPekka, $eIcnDonMinion, $eIcnDonHogRider, $eIcnDonValkyrie, $eIcnDonGolem, $eIcnDonWitch, $eIcnDonLavaHound, $eIcnDonBlank]
 Global $sLogPath ; `Will create a new log file every time the start button is pressed
 Global $sAttackLogPath ; `Will create a new log file every time the start button is pressed
+Global $sStatsLogPath ; `Will create a new log file every time the start button is pressed
 Global $hLogFileHandle
 Global $hAttackLogFileHandle
+Global $hStatsLogFileHandle
 Global $iCmbLog = 0
 Global $Restart = False
 Global $RunState = False
@@ -251,6 +253,7 @@ Global $pTakeAbreak
 Global $pAnotherDevice
 Global $sLogFName
 Global $sAttackLogFName
+Global $sStatsLogFName
 Global $AttackFile
 Global $RequestScreenshot = 0
 Global $iDeleteAllPushes = 0
@@ -977,7 +980,7 @@ EndIf
 ;Milking
 Global $MilkAtt = 1
 Global $NbtrpMilk = 150
-Global $retourdeguerre = 0 
+Global $retourdeguerre = 0
 Global $HysterGobs = 40
 Global $Musttrain = 0
 Global $skipStartTime

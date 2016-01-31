@@ -78,6 +78,13 @@ Func SetAtkLog($String1, $String2 = "", $Color = $COLOR_BLACK, $Font = "Lucida C
 	_FileWriteLog($hAttackLogFileHandle,  $String1 & $String2)
 EndFunc   ;==>SetAtkLog
 
+Func SetStatsLog() ;Sets the text for the Stats log
+    Local $sStringLog = "[" & _NowTime(4) & "]" & " [Gold:" & $iGoldCurrent & "]" & " [Elixir:" & $iElixirCurrent & "]" & " [Dark:" & $iDarkCurrent & "]" & " [Throphy:" & $iTrophyCurrent & "]" & " [Builders:" & $iFreeBuilderCount & "]" & " [Gem:" & $iGemAmount & "]"
+	If $hStatsLogFileHandle = "" Then CreateStatsLogFile()
+	_FileWriteLog($hStatsLogFileHandle,  $sStringLog)
+	Setlog("Writed stats to file", $COLOR_BLUE)
+ EndFunc   ;==>SetStatsLog
+
 Func AtkLogHead()
 	SetAtkLog(_PadStringCenter(" " & GetTranslated(0,15, "ATTACK LOG") & " ", 71, "="),"", $COLOR_BLACK, "MS Shell Dlg", 8.5)
 	SetAtkLog(GetTranslated(0,16, "                   --------  LOOT --------       ----- BONUS ------"),"")
