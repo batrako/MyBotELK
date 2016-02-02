@@ -6,15 +6,15 @@
 ; Return values .: None
 ; Author ........:
 ; Modified ......:
-; Remarks .......: 
+; Remarks .......:
 ; Related .......:
 ; Link ..........: https://github.com/MyBotRun/MyBot/wiki
 ; Example .......: No
 ; ===============================================================================================================================
-Func StartUDPClient() 
-    Local iError=@error
+Func StartUDPClient()
+    Local $iError=@error
 	UDPStartup() ; Start the UDP service.
-	$aSocket = UDPOpen("192.168.2.72", 5046)
+	$aSocket = UDPOpen("192.168.2.72", 5045)
 	; If an error occurred display the error code and return False.
 	If @error Then
 		$iError = @error
@@ -32,13 +32,13 @@ EndFunc   ;==>StartUDPClient
 ; Return values .: None
 ; Author ........:
 ; Modified ......:
-; Remarks .......: 
+; Remarks .......:
 ; Related .......:
 ; Link ..........: https://github.com/MyBotRun/MyBot/wiki
 ; Example .......: No
 ; ===============================================================================================================================
-Func SendELKStats($sStats) 
-    Local iError=@error
+Func SendELKStats($sStats)
+    Local $iError=@error
 	; Send the string "tata" to the server.
 	UDPSend($aSocket, $sStats)
 	If @error Then
@@ -46,6 +46,6 @@ Func SendELKStats($sStats)
 		SetLog("Error Sending Stats Data to Logstash " & $iError, $COLOR_RED)
 		Return False
 	EndIf
-	SetLog("Send Stats to LogStash Server " & $iError, $COLOR_RED)
+	SetLog("Send Stats to LogStash Server " &  $COLOR_BLUE)
 	Return True
 EndFunc   ;==>SendELKStats
