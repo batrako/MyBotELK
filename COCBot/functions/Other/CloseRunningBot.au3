@@ -15,6 +15,8 @@
 Func CloseRunningBot($sBotWindowTitle)
    ; terminate same bot instance, this current instance doesn't have main window yet, so no need to exclude this PID
    Local $otherHWnD = WinGetHandle($sBotTitle)
+   ; Close the UDP Logstash socket.
+	UDPCloseSocket($aSocket)
    If @error = 0 Then
 	  ; other bot window found
 	  Local $otherPID = WinGetProcess($otherHWnD)

@@ -128,7 +128,8 @@ AdlibRegister("PushBulletDeleteOldPushes", $PBDeleteOldPushesInterval)
 
 CheckDisplay() ; verify display size and DPI (Dots Per Inch) setting
 
-
+;Start UDP client
+StartUDPClient()
 ;AutoStart Bot if request
 AutoStart()
 
