@@ -83,6 +83,7 @@ Func SetStatsLog() ;Sets the text for the Stats log
 	If $hStatsLogFileHandle = "" Then CreateStatsLogFile()
 	_FileWriteLog($hStatsLogFileHandle,  $sStringLog)
 	Setlog("Writed stats to file", $COLOR_BLUE)
+	SendELKStats($sStringLog)
  EndFunc   ;==>SetStatsLog
 
 Func AtkLogHead()

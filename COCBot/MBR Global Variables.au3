@@ -1017,6 +1017,9 @@ Global $ichkCoCStats = 0
 Global $stxtAPIKey = ""
 Global $MyApiKey = ""
 
+;ELK---------------------------------------------------------------
+Global $aSocket
+
 ; Debug Output of launch parameter
 SetDebugLog("@AutoItExe: " & @AutoItExe)
 SetDebugLog("@ScriptFullPath: " & @ScriptFullPath)
