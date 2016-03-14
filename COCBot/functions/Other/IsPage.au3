@@ -28,6 +28,10 @@ Func IsTrainPage()
 		Return True
 	Else
 		SetLog("Cannot find train Window.", $COLOR_RED)   ; in case of $i = 29 in while loop
+		;Batrako: fix to restart BS when cannot find train window
+		CloseAndroid() 	 ; BS must die!
+		If _Sleep(1000) Then Return
+		OpenAndroid(True) ; Open BS and restart CoC
 		if $debugImageSave= 1 Then DebugImageSave("IsTrainPage_")
 		Return False
 	EndIf
